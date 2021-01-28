@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=<h1>, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -14,7 +18,53 @@
   </head>
   <body>
     <div class="container">
-      <h1>hello</h1>
+      <div class="header">
+        <form id="search-form" class="search-form">
+          <input type="text" id="search-text-input" />
+          <input type="submit" value="search" />
+        </form>
+        <a id="current-location-button" class="button"><img src="media/locationtag.png" alt="locationtag" width="18"
+            height="18"></a>
+      </div>
+      <main>
+        <div class="overview">
+          <h5>SUNNY</h5>
+          <h1> <span id="city">Barcelona</span></h1>
+          <h6 id="date"></h6>
+          <span class="temperature" id="temperature"></span>
+          <span class="units">
+            <a href="#" id="celsius-link">°C</a> |
+            <a href="#" id="fahrenheit-link">°F</a>
+          </span>
+      
+        </div>
+        </br>
+        <div class="temp-parameters">
+          <ul>
+            <li>Feels like: <span id="feels"></span>°</li>
+          </ul>
+          <ul>
+            <li>Humidity: <span id="humidity"></span> %</li>
+          </ul>
+          <ul>
+            <li>Wind speed: <span id="wind"></span> km/h</li>
+          </ul>
+        </div>
+      
+        <div class="row description">
+          <div class="col-12" id="description"></div>
+        </div>
+        <div class="row weather-forecast" id="forecast"></div>
+      </main>
+      
+      <footer>
+        <small>Code by Andrea Pacheco.
+          <a href="" target="_blank">GitHub</a>
+          2021
+        </small>
+      </footer>
+      </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
