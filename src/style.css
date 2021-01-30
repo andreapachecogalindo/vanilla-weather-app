@@ -1,0 +1,32 @@
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.search-form {
+  font-size: 10px;
+  flex-direction: row;
+}
+
+.overview {
+  text-align: center;
+}
+.container {
+  font-family: "Josefin Sans", sans-serif;
+  border-radius: 10px;
+  width: 30%;
+  padding: 70px;
+  margin: 100px auto;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
