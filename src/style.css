@@ -10,6 +10,7 @@
 
 .overview {
   text-align: center;
+  text-transform: capitalize;
 }
 .container {
   font-family: "Josefin Sans", sans-serif;
@@ -29,4 +30,5 @@ ul {
 }
 li {
   list-style: none;
+  text-transform: capitalize;
 }
