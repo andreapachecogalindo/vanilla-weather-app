@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
 }
+body {
+  background-color: #f2f3f0;
+}
 .search-form {
   font-size: 10px;
   flex-direction: row;
@@ -15,10 +18,9 @@
 .container {
   font-family: "Josefin Sans", sans-serif;
   border-radius: 10px;
-  width: 30%;
-  padding: 70px;
-  margin: 100px auto;
-  background-color: #f2f3f0;
+  width: 80%;
+  padding: 7px;
+  margin: 10px auto;
 }
 
 h1 {

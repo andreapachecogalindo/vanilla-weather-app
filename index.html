@@ -18,18 +18,23 @@
   <body>
     <div class="container">
       <div class="header">
+
         <form id="search-form" class="search-form">
-          <input type="text" id="search-text-input" />
-          <input type="submit" value="search" />
+          <input type="search" 
+          placeholder="city"
+          class="form-control"
+          id="city-input"/>
+          <input 
+          type="submit" 
+          value="search" 
+          class="btn btn-primary"/>
         </form>
         <a id="current-location-button" class="button"><img src="media/locationtag.png" alt="locationtag" width="18"
             height="18"></a>
+
       </div>
       <main>
         <div class="overview">
-          <img
-          src="media/01d.png"
-          id="icon">
           <h5 id="description"></h5>
           <h1 id="city"></h1>
           <h6 id="date"></h6>
@@ -41,6 +46,10 @@
       
         </div>
         </br>
+        </br>
+        </br>
+        </br>
+    
         <div class="temp-parameters">
           <ul>
             <li>Feels like: <span id="feels"></span>°</li>
@@ -52,7 +61,7 @@
             <li>H ↑ <span id="max"></span> °</li>
           </ul>
           <ul>
-            <li>L     ↓ <span id="min"></span> °</li>
+            <li>L ↓ <span id="min"></span> °</li>
           </ul>
         </div>
       
