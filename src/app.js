@@ -31,6 +31,8 @@ function displayTemperature(response) {
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -39,8 +41,10 @@ function displayTemperature(response) {
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute("src", `src/media${response.data.weather[0].icon}`);
 }
 let apiKey = "f54498ba0c2b84b117a6bad5fe404784";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=${apiKey}&units=metric`;
+let city = "Barcelona";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
