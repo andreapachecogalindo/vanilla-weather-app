@@ -35,3 +35,17 @@ li {
   list-style: none;
   text-transform: capitalize;
 }
+.weather-temperature .active {
+  color: black;
+  font-weight: bolder;
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temperature :hover {
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temperature :link {
+  text-decoration: none;
+  color: black;
+}
