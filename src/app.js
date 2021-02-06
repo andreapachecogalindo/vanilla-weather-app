@@ -23,7 +23,21 @@ function formatDate(timestamp) {
 
   return `${day} ${hours}:${minutes}`;
 }
+//weather forecast
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 
+//overview temperature description
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -49,18 +63,24 @@ function displayTemperature(response) {
 //weather forecast
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-  forecastElement.innerHTML = `
+  //loop weather forecast
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
     <div class="col-2">
-            <h6>12:00</h6>
+            <h6>
+            ${formatHours(forecast.dt * 1000)}
+            </h6>
             <div class="weather-forecast-temperature">
-              <strong>${Math.round(
-                forecast.main.temp_max
-              )}°</strong>${Math.round(forecast.main.temp_min)}°
+              <strong>
+              ${Math.round(forecast.main.temp_max)}°
+              </strong>
             </div>
           </div>`;
+  }
 }
 
 //search form current location

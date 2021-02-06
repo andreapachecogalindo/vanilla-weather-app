@@ -49,3 +49,6 @@ li {
   text-decoration: none;
   color: black;
 }
+small {
+  text-align: center;
+}
