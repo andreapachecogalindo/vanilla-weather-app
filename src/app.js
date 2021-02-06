@@ -134,7 +134,7 @@ function displayForecast(response) {
             <div class="row-4 day-col">
                 ${days[dayOne.getDay()]}
             </div>
-             <div class="col-4 icon-col">
+             <div class="row-4 icon-col">
                 <img src="media/${response.data.list[4].weather[0].icon}.png">
         </div>
             <div class="row-4 hi-col">
@@ -145,7 +145,7 @@ function displayForecast(response) {
             <div class="row-4 day-col">
                     ${days[dayTwo.getDay()]}
             </div>
-            <div class="col-4 icon-col">
+            <div class="row-4 icon-col">
                 <img src="media/${response.data.list[12].weather[0].icon}.png">
         </div>
             <div class="row-4 hi-col">
@@ -156,7 +156,7 @@ function displayForecast(response) {
         <div class="row-4 day-col">
              ${days[dayThree.getDay()]}
           </div>
-          <div class="col-4 icon-col">
+          <div class="row-4 icon-col">
                 <img src="media/${response.data.list[20].weather[0].icon}.png">
         </div>
          <div class="row-4 hi-col">
@@ -167,7 +167,7 @@ function displayForecast(response) {
         <div class="row-4 day-col">
             ${days[dayFour.getDay()]}
         </div>
-<div class="col-4 icon-col">
+                <div class="row-4 icon-col">
                 <img src="media/${response.data.list[28].weather[0].icon}.png">
         </div>
         <div class="row-4 hi-col">
@@ -178,7 +178,7 @@ function displayForecast(response) {
         <div class="row-4 day-col">
             ${days[dayFive.getDay()]}
         </div>
-        <div class="col-4 icon-col">
+        <div class="row-4 icon-col">
                 <img src="media/${response.data.list[36].weather[0].icon}.png">
         </div>
         <div class="row-4 hi-col">
@@ -234,4 +234,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 // default search
-searchCity("Paris");
+searchCity("Barcelona");

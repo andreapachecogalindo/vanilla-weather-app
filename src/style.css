@@ -1,5 +1,5 @@
 .header {
-  padding: 10px;
+  padding: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -82,6 +82,10 @@ ul {
 li {
   list-style: none;
   text-transform: capitalize;
+  text-align: center;
+}
+.weather-temperature {
+  font-size: 30px;
 }
 .weather-temperature .active {
   color: black;
@@ -99,4 +103,8 @@ li {
 }
 footer {
   text-align: center;
+}
+.weather-forecast {
+  text-align: center;
+  font-weight: 600;
 }
