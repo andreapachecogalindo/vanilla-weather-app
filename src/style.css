@@ -65,7 +65,7 @@ body {
 .container {
   font-family: "Josefin Sans", sans-serif;
   border-radius: 10px;
-  width: 50%;
+  width: 80%;
   padding: 7px;
   margin: 10px auto;
 }
@@ -107,7 +107,7 @@ footer {
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .header {
     margin-top: 30px;
     padding: 0.5rem;
@@ -116,9 +116,9 @@ footer {
   }
   .container {
     font-family: "Josefin Sans", sans-serif;
-    width: 99%;
+    width: 100%;
     padding: 7px;
-    margin: 10px auto;
+    margin: 1px auto;
   }
   .overview {
     margin-top: 30px;
