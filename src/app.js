@@ -94,7 +94,7 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature).catch(errorFunction);
 
-  //weather forecast
+  //weather forecast by hour
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -107,6 +107,69 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+//forecast by day
+function displayForecast(response) {
+  console.log(response);
+  let days = [
+    `Sunday`,
+    `Monday`,
+    `Tuesday`,
+    `Wednesday`,
+    `Thursday`,
+    `Friday`,
+    `Saturday`,
+  ];
+  let dayOne = new Date(response.data.list[4].dt_txt);
+  let dayTwo = new Date(response.data.list[12].dt_txt);
+  let dayThree = new Date(response.data.list[20].dt_txt);
+  let dayFour = new Date(response.data.list[28].dt_txt);
+  let dayFive = new Date(response.data.list[36].dt_txt);
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `<div class="col day-one">
+            <div class="row-4 day-col">
+                ${days[dayOne.getDay()]}
+            </div>
+            <div class="row-4 hi-col">
+                ${Math.round(response.data.list[4].main.temp)}°
+            </div>
+        </div>
+        <div class="col day-two">
+            <div class="row-4 day-col">
+                    ${days[dayTwo.getDay()]}
+            </div>
+            <div class="row-4 hi-col">
+                    ${Math.round(response.data.list[12].main.temp)}°
+             </div>
+     </div>
+    <div class="col day-three">
+        <div class="row-4 day-col">
+             ${days[dayThree.getDay()]}
+          </div>
+         <div class="row-4 hi-col">
+              ${Math.round(response.data.list[20].main.temp)}° 
+        </div>
+    </div>
+    <div class="col day-four">
+        <div class="row-4 day-col">
+            ${days[dayFour.getDay()]}
+        </div>
+        <div class="row-4 hi-col">
+            ${Math.round(response.data.list[28].main.temp)}°
+        </div>
+    </div>
+    <div class="col day-five">
+        <div class="row-4 day-col">
+            ${days[dayFive.getDay()]}
+        </div>
+        
+        <div class="row-4 hi-col">
+            ${Math.round(response.data.list[36].main.temp)}°
+        </div>
+    </div>
+    </div>`;
+}
 
 // unit conversion
 function displayFahrenheitTemperature(event) {
