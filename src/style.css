@@ -42,7 +42,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 button {
   background: none;
-  left: -20%;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -106,5 +105,4 @@ footer {
 }
 .weather-forecast {
   text-align: center;
-  font-weight: 600;
 }
