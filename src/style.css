@@ -65,7 +65,7 @@ body {
 .container {
   font-family: "Josefin Sans", sans-serif;
   border-radius: 10px;
-  width: 80%;
+  width: 50%;
   padding: 7px;
   margin: 10px auto;
 }
@@ -105,4 +105,26 @@ footer {
 }
 .weather-forecast {
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container {
+    font-family: "Josefin Sans", sans-serif;
+    width: 99%;
+    padding: 7px;
+    margin: 10px auto;
+  }
+  .weather-forecast {
+    text-align: center;
+    font-size: 10px;
+  }
+  .icon-col {
+    width: 0.2px;
+    height: 0.2px;
+  }
 }
