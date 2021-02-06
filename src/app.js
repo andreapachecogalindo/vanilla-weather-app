@@ -47,6 +47,7 @@ function displayTemperature(response) {
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
   let dateElement = document.querySelector("#date");
+  let icon = response.data.weather[0].icon;
 
   celsiusTemperature = response.data.main.temp;
 
@@ -58,6 +59,8 @@ function displayTemperature(response) {
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let iconDisplay = document.querySelector("#icon");
+  iconDisplay.setAttribute("src", `media/${icon}.png`);
 }
 
 //weather forecast
@@ -131,6 +134,9 @@ function displayForecast(response) {
             <div class="row-4 day-col">
                 ${days[dayOne.getDay()]}
             </div>
+             <div class="col-4 icon-col">
+                <img src="media/${response.data.list[4].weather[0].icon}.png">
+        </div>
             <div class="row-4 hi-col">
                 ${Math.round(response.data.list[4].main.temp)}°
             </div>
@@ -139,6 +145,9 @@ function displayForecast(response) {
             <div class="row-4 day-col">
                     ${days[dayTwo.getDay()]}
             </div>
+            <div class="col-4 icon-col">
+                <img src="media/${response.data.list[12].weather[0].icon}.png">
+        </div>
             <div class="row-4 hi-col">
                     ${Math.round(response.data.list[12].main.temp)}°
              </div>
@@ -147,6 +156,9 @@ function displayForecast(response) {
         <div class="row-4 day-col">
              ${days[dayThree.getDay()]}
           </div>
+          <div class="col-4 icon-col">
+                <img src="media/${response.data.list[20].weather[0].icon}.png">
+        </div>
          <div class="row-4 hi-col">
               ${Math.round(response.data.list[20].main.temp)}° 
         </div>
@@ -154,6 +166,9 @@ function displayForecast(response) {
     <div class="col day-four">
         <div class="row-4 day-col">
             ${days[dayFour.getDay()]}
+        </div>
+<div class="col-4 icon-col">
+                <img src="media/${response.data.list[28].weather[0].icon}.png">
         </div>
         <div class="row-4 hi-col">
             ${Math.round(response.data.list[28].main.temp)}°
@@ -163,7 +178,9 @@ function displayForecast(response) {
         <div class="row-4 day-col">
             ${days[dayFive.getDay()]}
         </div>
-        
+        <div class="col-4 icon-col">
+                <img src="media/${response.data.list[36].weather[0].icon}.png">
+        </div>
         <div class="row-4 hi-col">
             ${Math.round(response.data.list[36].main.temp)}°
         </div>
