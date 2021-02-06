@@ -88,8 +88,8 @@ function errorFunction(error) {
   alert("Oopsi! 🥑Location does not exist.");
 }
 
-//search form current location
-function search(city) {
+//search city
+function searchCity(city) {
   let apiKey = "f54498ba0c2b84b117a6bad5fe404784";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature).catch(errorFunction);
@@ -102,7 +102,7 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  searchCity(cityInputElement.value);
 }
 
 let form = document.querySelector("#search-form");
@@ -198,5 +198,23 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+//current location
+function searchLocation(position) {
+  let apiKey = "f54498ba0c2b84b117a6bad5fe404784";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayTemperature).catch(errorFunction);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 // default search
-search("Barcelona");
+searchCity("Paris");
