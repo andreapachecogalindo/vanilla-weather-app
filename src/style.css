@@ -12,6 +12,13 @@ form {
   background: transparent;
   border-radius: 50px;
 }
+/* Clear blue glow around search bar */
+input[type="search"],
+textarea {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
 
 /* clears the 'X' from Internet Explorer */
 input[type="search"]::-ms-clear {
@@ -40,6 +47,12 @@ button {
   border: none;
   cursor: pointer;
   position: relative;
+}
+.form-control:hover,
+.form-control:focus {
+  border: 1px solid #f1c323;
+  background-color: white;
+  text-emphasis-color: #f1c323;
 }
 
 body {
