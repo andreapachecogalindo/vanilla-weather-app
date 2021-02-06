@@ -3,12 +3,47 @@
   display: flex;
   justify-content: space-between;
 }
+form {
+  display: flex;
+  flex-direction: row;
+}
+.form-control {
+  background-color: transparent;
+  background: transparent;
+  border-radius: 50px;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+button {
+  background: none;
+  left: -20%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
 body {
   background-color: #f2f3f0;
-}
-.search-form {
-  font-size: 10px;
-  flex-direction: row;
 }
 
 .overview {
@@ -49,6 +84,6 @@ li {
   text-decoration: none;
   color: black;
 }
-small {
+footer {
   text-align: center;
 }

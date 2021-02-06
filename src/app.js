@@ -83,12 +83,16 @@ function displayForecast(response) {
   }
 }
 
-//search form current location
+//error message
+function errorFunction(error) {
+  alert("Oopsi! 🥑Location does not exist.");
+}
 
+//search form current location
 function search(city) {
   let apiKey = "f54498ba0c2b84b117a6bad5fe404784";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature).catch(errorFunction);
 
   //weather forecast
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
