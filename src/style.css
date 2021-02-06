@@ -109,6 +109,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
   .header {
+    margin-top: 30px;
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -119,12 +120,15 @@ footer {
     padding: 7px;
     margin: 10px auto;
   }
+  .overview {
+    margin-top: 30px;
+  }
   .weather-forecast {
     text-align: center;
     font-size: 10px;
   }
-  .icon-col {
-    width: 0.2px;
-    height: 0.2px;
+  .icon-col img {
+    width: 30px;
+    height: auto;
   }
 }
