@@ -63,29 +63,6 @@ function displayTemperature(response) {
   iconDisplay.setAttribute("src", `media/${icon}.png`);
 }
 
-//weather forecast
-function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = null;
-  let forecast = null;
-
-  //loop weather forecast
-  for (let index = 0; index < 6; index++) {
-    forecast = response.data.list[index];
-    forecastElement.innerHTML += `
-    <div class="col-2">
-            <h6>
-            ${formatHours(forecast.dt * 1000)}
-            </h6>
-            <div class="weather-forecast-temperature">
-              <strong>
-              ${Math.round(forecast.main.temp_max)}°
-              </strong>
-            </div>
-          </div>`;
-  }
-}
-
 //error message
 function errorFunction(error) {
   alert("Oopsi! 🥑Location does not exist.");
