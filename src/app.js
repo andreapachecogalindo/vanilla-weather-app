@@ -100,11 +100,11 @@ function displayForecast(response) {
     `Friday`,
     `Saturday`,
   ];
-  let dayOne = new Date(response.data.list[4].dt_txt);
-  let dayTwo = new Date(response.data.list[12].dt_txt);
-  let dayThree = new Date(response.data.list[20].dt_txt);
-  let dayFour = new Date(response.data.list[28].dt_txt);
-  let dayFive = new Date(response.data.list[36].dt_txt);
+  let dayOne = new Date(response.data.list[4].dt * 1000);
+  let dayTwo = new Date(response.data.list[12].dt * 1000);
+  let dayThree = new Date(response.data.list[20].dt * 1000);
+  let dayFour = new Date(response.data.list[28].dt * 1000);
+  let dayFive = new Date(response.data.list[36].dt * 1000);
 
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = `<div class="col day-one">
