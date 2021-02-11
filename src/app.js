@@ -115,7 +115,7 @@ function displayForecast(response) {
                 <img src="media/${response.data.list[4].weather[0].icon}.png">
         </div>
             <div class="row-4 hi-col">
-                ${Math.round(response.data.list[4].main.temp)}°
+                ${Math.round(response.data.list[4].main.temp)} C°
             </div>
         </div>
         <div class="col day-two">
@@ -126,7 +126,7 @@ function displayForecast(response) {
                 <img src="media/${response.data.list[12].weather[0].icon}.png">
         </div>
             <div class="row-4 hi-col">
-                    ${Math.round(response.data.list[12].main.temp)}°
+                    ${Math.round(response.data.list[12].main.temp)} C°
              </div>
      </div>
     <div class="col day-three">
@@ -137,7 +137,7 @@ function displayForecast(response) {
                 <img src="media/${response.data.list[20].weather[0].icon}.png">
         </div>
          <div class="row-4 hi-col">
-              ${Math.round(response.data.list[20].main.temp)}° 
+              ${Math.round(response.data.list[20].main.temp)} C° 
         </div>
     </div>
     <div class="col day-four">
@@ -148,7 +148,7 @@ function displayForecast(response) {
                 <img src="media/${response.data.list[28].weather[0].icon}.png">
         </div>
         <div class="row-4 hi-col">
-            ${Math.round(response.data.list[28].main.temp)}°
+            ${Math.round(response.data.list[28].main.temp)} C°
         </div>
     </div>
     <div class="col day-five">
@@ -159,7 +159,7 @@ function displayForecast(response) {
                 <img src="media/${response.data.list[36].weather[0].icon}.png">
         </div>
         <div class="row-4 hi-col">
-            ${Math.round(response.data.list[36].main.temp)}°
+            ${Math.round(response.data.list[36].main.temp)} C°
         </div>
     </div>
     </div>`;
